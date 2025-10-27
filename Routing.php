@@ -1,25 +1,40 @@
 <?php
 
+require_once 'src/controllers/SecurityController.php';
+
+//TODO naprawic kontrolery na singletony
 class Routing {
 
-    public static function run(string $path) {
-        $path = trim($path, '/');
+    public static $routing = [
+        'login' => [
+            'controller' => 'SecurityController',
+            'action' => 'login'
+        ],
+        'register' => [
+            'controller' => 'SecurityController',
+            'action' => 'register'
+        ]
+    ];
 
+    public static function run(string $path) {
         switch ($path) {
             case 'dashboard':
                 include 'public/views/dashboard.html';
-                return;
+                break;
+
             case 'login':
-                include 'public/views/login.html';
-                return;
-        }
+            case 'register':
+                $controller = self::$routing[$path]['controller'];
+                $action = self::$routing[$path]['action'];
 
-        if (preg_match('/^user\/(\d+)$/', $path, $matches)) {
-            $id = $matches[1];
-            echo "<h1>User ID = {$id}</h1>";
-            return;
-        }
+                $controllerObcject = new $controller();
+                $controllerObcject->$action();
 
-        include 'public/views/404.html';
+                break;
+
+            default:
+                include 'public/views/404.html';
+                break;
+        }
     }
 }

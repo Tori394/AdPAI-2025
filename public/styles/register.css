@@ -8,13 +8,6 @@ h1 {
     margin-bottom: 0.7rem;
 }
 
-img {
-    display: flex;
-    margin:0rem;
-    max-height: 250px;
-    height: auto;
-}
-
 body {
     display: flex;
     justify-content: center;
@@ -71,10 +64,10 @@ input:focus {
   transform: scale(1.05);
 }
 
-.btn-login {
+.btn-register {
     background: #4a477a;
 }
 
-.btn-register {
+.btn-login {
     background: #333333;
 }

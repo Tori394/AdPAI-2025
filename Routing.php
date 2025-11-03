@@ -1,8 +1,8 @@
 <?php
 
 require_once 'src/controllers/SecurityController.php';
+require_once 'src/controllers/DashboardController.php';
 
-//TODO naprawic kontrolery na singletony
 class Routing {
 
     public static $routing = [
@@ -13,28 +13,36 @@ class Routing {
         'register' => [
             'controller' => 'SecurityController',
             'action' => 'register'
+        ],
+        'dashboard' => [
+            'controller' => 'DashboardController',
+            'action' => 'index'
         ]
     ];
 
     public static function run(string $path) {
-        switch ($path) {
-            case 'dashboard':
-                include 'public/views/dashboard.html';
-                break;
 
-            case 'login':
-            case 'register':
-                $controller = self::$routing[$path]['controller'];
-                $action = self::$routing[$path]['action'];
+        $path = trim($path, '/');
+        $id = 0; 
+        $parts = explode('/', $path);
 
-                $controllerObcject = new $controller();
-                $controllerObcject->$action();
+        $route = $parts[0];
 
-                break;
+        if (isset($parts[1])) {
+            $id = $parts[1];
+        }
 
-            default:
-                include 'public/views/404.html';
-                break;
+        if(!array_key_exists($route, self::$routing)) {
+
+            include 'public/views/404.html';
+
+        } else {
+
+            $controller = self::$routing[$route]['controller'];
+            $action = self::$routing[$route]['action'];
+
+            $controllerObcjet = $controller::getInstance();
+            $controllerObcjet->$action($id);
         }
     }
 }

@@ -23,3 +23,25 @@ document.addEventListener("DOMContentLoaded", function() {
 
     });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const countries = document.querySelectorAll("#allSvg .allPaths");
+  const panel = document.getElementById("countryGallery");
+  const closeBtn = document.getElementById("closePanel");
+  const infoContent = document.getElementById("infoContent");
+
+  countries.forEach(country => {
+    country.addEventListener("click", () => {
+      const countryName = country.id;
+      infoContent.innerHTML = `
+        <h2>${countryName}</h2>
+        <p>This gallery is empty</p>
+      `;
+      panel.classList.add("active");
+    });
+  });
+
+  closeBtn.addEventListener("click", () => {
+    panel.classList.remove("active");
+  });
+});

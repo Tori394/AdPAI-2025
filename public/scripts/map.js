@@ -7,24 +7,17 @@ document.addEventListener("DOMContentLoaded", function() {
         fit: true,
         center: true,
         beforePan: function(oldPan, newPan) {
-        const paddingTop = 100;
+        const padding = 80;
         const sizes = this.getSizes();
         const zoom = this.getZoom();
 
-        const SVGWidth = sizes.viewBox.width;
-        const SVGHeight = sizes.viewBox.height;
-        const viewerWidth = sizes.width;
-        const viewerHeight = sizes.height;
-
-        const onScreenWidth = SVGWidth * zoom;
-        const onScreenHeight = SVGHeight * zoom;
-
-        const maxWidthOffset = viewerWidth - onScreenWidth;
-        const maxHeightOffset = viewerHeight - onScreenHeight + paddingTop;
+        const maxWidthOffset = sizes.width - sizes.viewBox.width * zoom;
+        const maxHeightOffset = sizes.height - sizes.viewBox.height * zoom + padding;
+        const minPanX = sizes.width - (1500 * zoom);
 
         return {
-            x: Math.min(paddingTop, Math.max(newPan.x, maxWidthOffset)),
-            y: Math.min(paddingTop, Math.max(newPan.y, maxHeightOffset))
+            x: Math.min(padding, Math.max(newPan.x, Math.max(maxWidthOffset, minPanX))),
+            y: Math.min(padding, Math.max(newPan.y, maxHeightOffset))
         };
     }
 

@@ -6,24 +6,24 @@
 
 .allPaths:hover {
     filter: drop-shadow(0 0 10px white);
-    stroke-width: 2.5;
+    stroke-width: 3;
 }
 
 #mapContainer {
     width: 100vw;
     height: 100vh;
-    cursor: grab; /* wskazuje, że można przeciągać */
+    cursor: grab; 
 }
 
 svg {
     width: 100%;
     height: 100%;
-    user-select: none; /* wyłącza zaznaczanie przy przeciąganiu */
-    transform-origin: 0 0; /* punkt odniesienia do skalowania */
+    user-select: none; 
+    transform-origin: 0 0;
 }
 
 #allSvg {
-    transform-origin: 0 0; /* ważne, żeby transform działał od lewego górnego rogu */
-    will-change: transform; /* podpowiada przeglądarce, że będzie transform */
-    transition: transform 0.05s ease-out; /* bardzo szybka animacja dla płynności */
+    transform-origin: 0 0; 
+    will-change: transform;
+    transition: transform 0.05s ease-out; 
 }

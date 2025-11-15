@@ -7,3 +7,43 @@ body {
     display: flex;
     flex-direction: column;
 }
+
+.sidePanel {
+    background-color:  rgb(224, 224, 224);
+    width: 6vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-direction: column;
+    gap: 20vh;
+}
+
+.dashboard {
+    flex-direction: row;
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    justify-content: flex-end;
+}
+
+.buttons {
+    cursor: pointer;
+    fill: #333333;
+    width: 5vw;
+}
+
+.buttons:hover {
+    filter: drop-shadow(0 0 5px #adadad);
+    transform: scale(1.1);
+}
+
+button {
+  background: none;     
+  border: none;        
+  outline: none;             
+  padding: 0.5rem;       
+  display: flex;         
+  justify-content: center;
+  align-items: center;
+}

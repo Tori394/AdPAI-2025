@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const countryName = country.id;
       infoContent.innerHTML = `
         <h2>${countryName}</h2>
-        <p>This gallery is empty</p>
+        <p>You haven't been in this country yet</p>
       `;
       panel.classList.add("active");
     });

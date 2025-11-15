@@ -41,23 +41,6 @@ svg path {
     transition: transform 0.05s ease-out; 
 }
 
-#dashboard {
-    display: flex;
-    height: 100vh;
-    width: 100vw;
-}
-
-#sidePanel {
-    background-color:  rgb(224, 224, 224);
-    width: 6vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
-    flex-direction: column;
-    gap: 20vh;
-}
-
 #buttons {
     cursor: pointer;
     fill: #333333;

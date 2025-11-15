@@ -1,0 +1,107 @@
+main{
+    font-family: 'Montserrat', Arial, sans-serif;
+}
+
+#user-panel {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+#profile-picture {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #adadad;
+    color: #333333;
+}
+
+#user-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    height: 100vh;
+    font-family: 'Montserrat', Arial, sans-serif;
+    color: #fff;
+}
+
+.profile-wrapper {
+    position: relative;
+    width: 10rem;
+    height: 10rem;
+}
+
+#edit-icon {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background-color: #e3e3e3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:#333333;
+    font-size: 1.2rem;
+    border: 2px solid #333333;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+#edit-icon:hover {
+    transform: scale(1.2);
+}
+
+p {
+    font-size: 1.5rem;
+    color: #ffffff;
+}
+
+#timeline {
+    width: 80vw;
+    min-height: 10vh;
+    border-radius: 10px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #adadad;
+    gap: 1rem;
+}
+
+#trips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    width: 100%;
+}
+
+.trip {
+    width: 80vw;
+    background-color: #adadad;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#no-trips {
+    color: #333333;
+    font-size: 1.2rem;
+    text-align: center;
+}

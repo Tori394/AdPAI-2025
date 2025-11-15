@@ -8,7 +8,7 @@ body {
     flex-direction: column;
 }
 
-.sidePanel {
+.side-panel {
     background-color:  rgb(224, 224, 224);
     width: 6vw;
     height: 100vh;

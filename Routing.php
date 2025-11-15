@@ -3,6 +3,7 @@
 require_once 'src/controllers/SecurityController.php';
 require_once 'src/controllers/MapDashboardController.php';
 require_once 'src/controllers/CreatorController.php';
+require_once 'src/controllers/ProfileController.php';
 
 class Routing {
 
@@ -21,6 +22,10 @@ class Routing {
         ],
         'creator' => [
             'controller' => 'CreatorController',
+            'action' => 'index'
+        ],
+        'profile' => [
+            'controller' => 'ProfileController',
             'action' => 'index'
         ]
     ];

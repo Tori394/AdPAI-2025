@@ -8,15 +8,20 @@
 </head>
 <body>
     <h1 id="title">RoamReel</h1>
-    <form>
+    <?php if(isset($message)): ?>
+        <p class="message">
+            <?= $message; ?>
+        </p>
+    <?php endif; ?>
+    <form action="\register" method="POST">
         <label for="email">Email</label>
-        <input type ='email' placeholder="E-mail">
+        <input name=email type ='email' placeholder="E-mail">
         <label for="username">Username</label>
-        <input type ='text' placeholder="Username">
+        <input name=username type ='text' placeholder="Username">
         <label for="password">Password</label>
-        <input type ='password' placeholder="Password">
+        <input name=password type ='password' placeholder="Password">
         <label for="password">Confirm Password</label>
-        <input type ='password' placeholder="Confirm Password">
+        <input name=confPassword type ='password' placeholder="Confirm Password">
         <button type='submit' class="button btn-register">Register</button>
         <label for="button">Already registered?</label>
         <button type='button' class="button btn-login">Login</button>

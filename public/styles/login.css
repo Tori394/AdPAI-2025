@@ -77,9 +77,26 @@ input:focus {
     background: #333333;
 }
 
+/* Zapobiega przewijaniu w bok */
+html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Obrazek dopasowuje się do ekranu */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Formularz dopasowuje się na małych ekranach */
 @media screen and (max-width: 480px) {
+
     form {
-        width: 100vw;
+        width: 90vw;        /* nie wychodzi poza ekran */
+        min-width: unset;   /* usuwa minimalną szerokość */
+        padding: 1rem;
     }
-  
 }
